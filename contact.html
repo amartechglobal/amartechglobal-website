@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Amar Tech Global </title>
+    <!-- <link rel="stylesheet" href="https://fonts.googlepis.com/css2?family=Poppins:wght@400;600&diplay=swap"> -->
+
+  </head>
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <body>
+    <header>
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="Company Logo" width="60"
+        style="vertical-align: middle; border-radius: 3px;">
+      <h1 style="display:inline; margin-left:10px;font-size: 40px;">Amar Tech
+        Global </h1>
+      <nav>
+        <a href="index">Home</a> |
+        <a href="about">About</a> |
+        <a href="services">Services</a> |
+        <a href="contact">Contact</a> |
+        <a href="show">Show</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> amartechglobal.com</p>
+        <p><strong>Phone:</strong> +91 83818 81409 </p>
+        <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
+      </section>
+
+      <section>
+
+
+        <h3>Send us a message</h3>
+        <form action="/submit" method="POST">
+          <label>Name:</label><br>
+          <input type="text" name="name" required><br><br>
+
+          <label>Email:</label><br>
+          <input type="email" name="email" required><br><br>
+
+          <label>Message:</label><br>
+          <textarea name="message" rows="5" required></textarea><br><br>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 AmarTech Global | All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+ 
+<body>
+    <header>
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="Company Logo" width="60"
+        style="vertical-align: middle; border-radius: 3px;">
+      <h1 style="display:inline; margin-left:10px;font-size: 40px;">Amar Tech
+        Global </h1>
+      <nav>
+        <a href="index">Home</a> |
+        <a href="about">About</a> |
+        <a href="services">Services</a> |
+        <a href="contact">Contact</a> |
+        <a href="show">Show</a>
+      </nav>
+    </header>
+    <main>
+    <h2>Student Records</h2>
+    <a href="/add">Add new student</a>
+    <table border="1" cellpadding = "8">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Action</th>
+        </tr>
+        {% for s in data %}
+        <tr>
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.course}}</td>
+            <td>
+                <a href="/edit/{{s.id}}">Edit</a>
+                <a href="/delete/{{s.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </main>
+      <footer>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+      <p>© 2025 AmarTech Global  | Innovating the Future with Code
+        🚀</p>
+    </footer>
+</body>
+
+</html>
